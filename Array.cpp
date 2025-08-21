@@ -14,7 +14,8 @@ Array::~Array() {
 
 // Add value at the end if there's space
 bool Array::Add(int value) {
-    if (size_ == capacity_) {
+    if (size_ == capacity_) 
+    {
         return false;  // no space
     }
     data_[size_] = value;
@@ -23,12 +24,14 @@ bool Array::Add(int value) {
 }
 
 // Insert value at specified index, shifting elements to the right
-bool Array::InsertAt(int index, int value) {
+bool Array::InsertAt(int index, int value) 
+{
     return false;
 }
 
 // Delete element at index, shifting elements left
-bool Array::DeleteAt(int index) {
+bool Array::DeleteAt(int index) 
+{
     return false;
 }
 
@@ -63,7 +66,8 @@ int Array::Capacity() const {
 
 // Get value at index or throw if invalid
 int Array::GetAt(int index) const {
-    if (index < 0 || index >= size_) {
+    if (index < 0 || index >= size_) 
+    {
         throw std::out_of_range("Index out of range");
     }
     return data_[index];
