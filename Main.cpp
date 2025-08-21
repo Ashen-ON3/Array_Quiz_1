@@ -2,12 +2,17 @@
 #include "Array.h"
 
 // Helper function to check if array contents match expected values
-bool CheckArrayContents(const Array& arr, const int expected[], int expectedSize) {
+bool CheckArrayContents(const Array& arr, const int expected[], int expectedSize) 
+{
     if (arr.Size() != expectedSize) return false;
-    for (int i = 0; i < expectedSize; i++) {
-        try {
+    for (int i = 0; i < expectedSize; i++) 
+    {
+        try 
+        {
             if (arr.GetAt(i) != expected[i]) return false;
-        } catch (...) {
+        } 
+        catch (...) 
+        {
             return false;
         }
     }
@@ -142,31 +147,43 @@ void RunAllTests() {
 
     // Test 5: GetAt valid and invalid positions
     std::cout << "\nTest 5: GetAt\n";
-    try {
+    try 
+    {
         int val = arr2.GetAt(0);
         std::cout << "GetAt index 0: Passed (Value: " << val << ")\n";
-    } catch (...) {
+    } 
+    catch (...) 
+    {
         std::cout << "GetAt index 0: Failed\n";
     }
 
-    try {
+    try 
+    {
         int val = arr2.GetAt(arr2.Size() - 1);
         std::cout << "GetAt last index: Passed (Value: " << val << ")\n";
-    } catch (...) {
+    } 
+    catch (...) 
+    {
         std::cout << "GetAt last index: Failed\n";
     }
 
-    try {
+    try 
+    {
         arr2.GetAt(-1);
         std::cout << "GetAt negative index: Failed\n";
-    } catch (...) {
+    } 
+    catch (...)
+    {
         std::cout << "GetAt negative index: Passed\n";
     }
 
-    try {
+    try 
+    {
         arr2.GetAt(arr2.Size());
         std::cout << "GetAt index >= size: Failed\n";
-    } catch (...) {
+    } 
+    catch (...) 
+    {
         std::cout << "GetAt index >= size: Passed\n";
     }
 
